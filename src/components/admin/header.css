@@ -1,0 +1,19 @@
+.header{
+    padding: 20px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul{
+    display: flex;
+    list-style: none;
+}
+
+.header a{
+    text-decoration: none;
+    color: black;
+}
+.header a:hover{
+    color: blue;
+}
