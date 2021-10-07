@@ -1,0 +1,29 @@
+ul{
+    padding: 0 !important;
+}
+.header-user{
+    background-color: #2856fb;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header-user a{
+    color: white;
+    text-decoration: none;
+}
+
+.cart-number{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    left: -10px;
+    bottom: 10px;
+    position: relative;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 50%;
+}

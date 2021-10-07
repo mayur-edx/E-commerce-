@@ -14,13 +14,14 @@ const ListProduct = () => {
     const product = useSelector(state => state.product.products);
     const [active, setactive] = useState(1)
     const [sort, setsort] = useState(false)
-    const [productCategoryInput, setproductCategoryInput] = useState('')
+    // eslint-disable-next-line
+    const [productCategoryInput, setproductCategoryInput] = useState('')  
     const [page, setpage] = useState([])
     const [itemPerPage, setitemPerPage] = useState(5)
     const [products, setproducts] = useState([])
 
     const toast = useSelector(state => state.toast)
-    const productCategory = useSelector(state => state.productCategory)
+    const productCategory = useSelector(state => state.pcategory)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -36,6 +37,7 @@ const ListProduct = () => {
             }
 
         }
+        // eslint-disable-next-line
     }, [product])
 
     useEffect(() => {
@@ -46,6 +48,7 @@ const ListProduct = () => {
             console.log("pagenew", pagenew);
             setpage(pagenew)
         }
+        // eslint-disable-next-line
     }, [products])
 
     if (toast.show === true) {
@@ -103,8 +106,10 @@ const ListProduct = () => {
         setsort(!sort)
         let g;
         if(!sort){
+            // eslint-disable-next-line
             g= product.sort((a,b)=>  a.name > b.name && 1 || -1)
         }else{
+            // eslint-disable-next-line
             g= product.sort((a,b)=>  a.name < b.name && 1 || -1)
         }
         let newData = g.filter((data,index) => index < itemPerPage)
@@ -305,7 +310,6 @@ const ListProduct = () => {
                                 {marginLeft: '10px'}
                         }
                         onClick={() => {
-                            let length = product.length
                             let lastpage = page.length -1 
                             let start = (itemPerPage * lastpage)+ 1
                             let p =  product.filter((data,index) =>  index >= start)

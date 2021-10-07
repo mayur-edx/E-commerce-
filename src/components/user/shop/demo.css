@@ -1,0 +1,6 @@
+.demo{
+    transition: 0.3s;
+}
+.demo:hover{
+    padding: 0% !important;
+}

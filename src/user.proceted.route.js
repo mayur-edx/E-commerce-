@@ -9,9 +9,9 @@ const UserProtectedRoute = (  {component: Component,
     return (
         <Route  {...reset} render={props => {
             if(!auth.users[0].isAdmin){
-            if(auth.users[0].authenticat){
-                return <Component {...props}/>
-                }
+                if(auth.users[0].authenticat){
+                    return <Component {...props}/>
+                    }
                 return <Redirect to="/login"/>
             }else{
                 <Redirect to="/login"/>

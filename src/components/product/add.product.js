@@ -10,7 +10,7 @@ import { onCategoryInsert } from '../../redux/category/action';
 
 const AddProduct = (props) => {
     const products = useSelector(state => state.product.products);
-    const productCategory = useSelector(state => state.productCategory)
+    const productCategory = useSelector(state => state.pcategory)
     const history = useHistory();
     // const [index, setIndex] = useState(null);
     const params = useParams();
@@ -64,6 +64,7 @@ const AddProduct = (props) => {
                 alert("product doesnot exist");
                 props.history.push("/add-product");
             }
+            // eslint-disable-next-line 
         }}, []);
     const dispatch = useDispatch()
     // const index = useSelector(state => state.product.index)
@@ -147,7 +148,6 @@ const AddProduct = (props) => {
         }else if ( !numberValidator.test(value.discount)){ 
             seterror({...error, discount:'this filed is only enter number'})
         } else{ 
-            debugger
             if(params.index){
                 let datap = value;
                 let data = {
