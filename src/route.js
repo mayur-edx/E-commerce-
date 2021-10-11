@@ -12,6 +12,7 @@ const Login = lazy(() => import('./components/login'))
 // const Home = lazy(()=> import('./components/user/home')) 
 const Cart = lazy(() => import('./components/user/cart/cart'))
 const Shop = lazy( () => import('./components/user/shop/shop'))
+const ProductDetails = lazy(() => import('./components/product/product.details'))
 
 const MainRoute = (props) => {
 
@@ -33,15 +34,15 @@ const MainRoute = (props) => {
 
     return (<>
         
-        <Route exact path="/" >
-          {state.isAdmin ? state.authenticat ? <Redirect to="/admin-dashboard"/> : <Redirect to="/login"/> : <Shop/> }
-        </Route>
+      <Route exact path="/" >
+        {state.isAdmin ? state.authenticat ? <Redirect to="/admin-dashboard"/> : <Redirect to="/login"/> : <Shop/> }
+      </Route>
         
-        <Route exact path="/login" component={Login}/>
+      <Route exact path="/login" component={Login}/>
 
-        <Route exact path="/shop" component={Shop}/>
+      <Route exact path="/cart" component={Cart} />
 
-        <Route exact path="/cart" component={Cart} />
+      <Route exact path="/products/:id" component={ProductDetails} />
 
         {/* admin all Route */}
         {

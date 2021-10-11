@@ -23,11 +23,11 @@ const Header = () => {
         <div className="p-4 header-user" style={{display:'flex', justifyContent:'space-between'}}>
         
             <ul style={{listStyle:'none', display:'flex'}}>
-                <li><Link to="shop">Shop</Link></li>
+                <li><Link to="/">Shop</Link></li>
             </ul>
         
             <ul style={{listStyle:'none', display:'flex'}}>
-                <li><Link to="cart"><i className="fas fa-shopping-cart"></i>{cartNumber && <span className="cart-number">{cartNumber.length}</span>}</Link></li>
+                <li><Link to="/cart"><i className="fas fa-shopping-cart"></i>{cartNumber && <span className="cart-number">{cartNumber.length}</span>}</Link></li>
                 {auth ? <li onClick={handleLogout} style={{marginLeft:'10px'}}>Logout</li>:<li style={{marginLeft:'10px'}}> <Link to="/login" >Login</Link></li>}
     
             </ul>

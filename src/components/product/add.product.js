@@ -224,19 +224,22 @@ const AddProduct = (props) => {
                     <p className="mt-3">Do you have add a product category? </p>
                     <input type='radio' value='yes' name='categoryProduct' onChange={() => setCategory(true)} />Yes
                     <input type='radio' value='no' style={{marginLeft:'10px'}} name='categoryProduct'  onChange={() => setCategory(false)}/>No
-                    {category ? <div>
-                        <input type="text" className="form-control mt-3" value={categoryInput} onChange={(e) => {setCategoryInput(e.target.value)
-                         }} placeholder="Enter Product Category"/> <Button onClick={()=> {
-                            let data = {} 
-                            data.id = Math.floor(Math.random() * 10000)
-                            data.name = categoryInput
-                            dispatch(onCategoryInsert(data))
-                            setCategoryInput('') 
-                            setCategory(false)
-                            setTimeout(() => {
-                                document.querySelector('#leaveCode').value = data.id
-                            },1000)
-                        }}>Add Category</Button></div>
+                    {category 
+                        ? <div>
+                            <input type="text" className="form-control mt-3" value={categoryInput} onChange={e => setCategoryInput(e.target.value)} placeholder="Enter Product Category"/> 
+                            <Button onClick={()=> {
+                                let data = {} 
+                                data.id = Number(Math.floor(Math.random() * 10000))
+                                data.name = categoryInput
+                                dispatch(onCategoryInsert(data))
+                                setCategoryInput('') 
+                                setCategory(false)
+                                setTimeout(() => {
+                                    document.querySelector('#leaveCode').value = data.id
+                                },1000)}}>
+                            Add Category
+                            </Button>
+                        </div>
                     :null }
                 </div>
                 <div className="col-6">

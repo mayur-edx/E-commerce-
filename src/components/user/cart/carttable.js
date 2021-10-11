@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const CartTable = (props) => {
     
@@ -25,11 +26,11 @@ const CartTable = (props) => {
     
     return (
         <tr>
-            <td>{index +1}</td>
-            <td>{data.name}</td>
-            <td><img src={data.image} width="100px" alt={data.name} /></td>
-            <td>{category}</td>
-            <td>{data.totalPrice}</td>
+            <td><Link to={`/products/${data.id}`} style={{textDecoration:'none', color:'black'}}>{index +1}</Link></td>
+            <td><Link to={`/products/${data.id}`} style={{textDecoration:'none', color:'black'}}>{data.name}</Link></td>
+            <td><Link to={`/products/${data.id}`} style={{textDecoration:'none', color:'black'}}><img src={data.image} width="100px" alt={data.name} /></Link></td>
+            <td><Link to={`/products/${data.id}`} style={{textDecoration:'none', color:'black'}}>{category}</Link></td>
+            <td><Link to={`/products/${data.id}`} style={{textDecoration:'none', color:'black'}}>{data.totalPrice}</Link></td>
             <td>
                 <button className="btn btn-sm btn-secondary" style={{marginRight:'10px'}} onClick={()=>handlQuantityIncrament(index)}>
                     <i className="fas fa-plus"></i>

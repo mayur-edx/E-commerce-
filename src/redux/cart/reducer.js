@@ -22,6 +22,7 @@ const CartReducer= (state = init_state, action) => {
                 if(fatch < 1){
 
                 
+                
                 let cartData = JSON.parse(localStorage.getItem('cart'));
             
                 let payloadData = payload;
